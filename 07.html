@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>复制</title>
+</head>
+
+<body>
+  <script>
+    // var myArray = ['foo', 42, 'bar'];
+    // myArray['3'] = 'baz';
+    // console.log(myArray, myArray.length);
+    // console.log(myArray[3]);
+
+    // var anotherObject = {
+    //   c: true
+    // }
+    // var myObject = {
+    //   a: 2,
+    //   b: anotherObject
+    // }
+    // var newObj = Object.assign({}, myObject);
+    // console.log(newObj);
+    // console.log(
+    //   Object.getOwnPropertyDescriptor(myObject, 'a')
+    // );
+    
+    var myObject = {};
+    Object.defineProperty(myObject, 'a', {
+      value: 2,
+      writable: true,
+      configurable: true,
+      enumerable: true
+    })
+    console.log(myObject.a);
+    
+  </script>
+</body>
+
+</html>
