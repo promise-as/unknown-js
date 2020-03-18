@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mixin</title>
+</head>
+
+<body>
+  <script>
+    // 显示伪多态
+    // function mixin(sourceObj, targetObj) {
+    //   for (var key in sourceObj) {
+    //     targetObj[key] = sourceObj[key];
+    //   }
+    //   return targetObj;
+    // }
+    // var Vehicle = {
+
+    // }
+    // // 首先创建一个空对象并把 Vehicle 的内容复制进去
+    // var Car = mixin(Vehicle, {});
+    // // 然后把新内容复制到 Car 中
+    // mixin({
+    //   wheels: 4,
+    //   drive: function () { }
+    // }, Car)
+
+    // 隐式混入
+    // var Something = {
+    //   cool: function () {
+    //     this.greeting = 'Hellow World';
+    //     this.count = this.count ? this.count + 1 : 1;
+    //   }
+    // }
+    // Something.cool();
+    // Something.greeting;
+    // Something.count;
+    // var Another = {
+    //   cool: function(){
+    //     // 隐式把 Something 混入 Another
+    //     Something.cool.call(this)
+    //   }
+    // };
+    // Another.cool();
+    // console.log(Another.greeting);
+    // console.log(Another.count);
+
+    var anotherObject = {
+      a: 2
+    }
+    var myObject = Object.create(anotherObject);
+    // console.log(anotherObject.a);
+    // console.log(myObject.a);
+    // console.log(anotherObject.hasOwnProperty('a'));
+    console.log(myObject.hasOwnProperty('a'));
+    myObject.a++; // 隐式屏蔽
+    console.log(anotherObject.a);
+    console.log(myObject.a);
+    console.log(myObject.hasOwnProperty('a'));
+    
+  </script>
+</body>
+
+</html>
